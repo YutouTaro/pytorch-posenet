@@ -9,7 +9,7 @@ from DataSet import *
 learning_rate = 0.0001
 batch_size = 75
 EPOCH = 80000
-directory = '/path_to_dataset/KingsCollege/'
+directory = '/content/drive/My Drive/Colab Notebooks/colabFiles/posenet/KingsCollege/'
 
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
