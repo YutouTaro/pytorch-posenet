@@ -6,10 +6,21 @@ from torch.autograd import Variable
 import PoseNet
 from DataSet import *
 
+import sys
+
 learning_rate = 0.0001
 batch_size = 75
 EPOCH = 80000
-directory = '/content/drive/My Drive/Colab Notebooks/colabFiles/posenet/KingsCollege/'
+
+path_cwd = os.getcwd()
+if len(sys.argv) == 1:
+    directory = os.path.abspath(os.path.join(path_cwd, "../DataSet/CambridgeLandmarks/KingsCollege")) + "/"
+else:
+    directory = os.path.abspath(os.path.join(path_cwd, "../drive/My Drive/Colab Notebooks/colabFiles/posenet/KingsCollege")) + "/"
+print("========================================")
+print("The current running directory is " + path_cwd)
+print("The program will read the trainning data from \n\t" + directory)
+print("========================================")
 
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
